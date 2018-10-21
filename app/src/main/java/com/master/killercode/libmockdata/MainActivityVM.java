@@ -30,6 +30,8 @@ public class MainActivityVM {
     public ObservableField<String> urlbg = new ObservableField<>();
     public ObservableField<String> urlperfil = new ObservableField<>();
 
+    public ObservableField<String> time = new ObservableField<>();
+
     public ObservableField<String> flogin = new ObservableField<>();
 
     public ObservableField<String> randomlogin = new ObservableField<>();
@@ -64,6 +66,10 @@ public class MainActivityVM {
         url.set(mockido.getUrl("Mockido"));
         urlbg.set(mockido.getUrlImageBackground());
         urlperfil.set(mockido.getUrlFemaleImagePerfil());
+
+        //==========================================================================================
+
+        time.set(mockido.getRamdomTime(2018, 2018, true));
 
         //==========================================================================================
 

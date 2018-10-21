@@ -5,9 +5,14 @@ import android.app.Activity;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 import static com.master.killercode.mockido.Mockido.StringNames.FEMALE;
@@ -742,6 +747,204 @@ public class Mockido {
             sb.append(random.nextInt(10));
         }
         return sb.toString();
+    }
+
+    //==============================================================================================
+    //
+    // Numbers
+    //
+    //==============================================================================================
+
+    public String getNumber() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(random.nextInt(10000000) + 1);
+        return sb.toString();
+    }
+
+    public String getNumber(int max) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(random.nextInt(max));
+        return sb.toString();
+    }
+
+    public String getNumber(int min, int max) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(randBetween(min, max));
+        return sb.toString();
+    }
+
+    //==============================================================================================
+    //
+    //
+    //
+    //==============================================================================================
+
+    public String getRamdomTime(int minYear, int maxYear, boolean brazil) {
+        SimpleDateFormat dfDateTime = getFormate(brazil);
+
+        int year = randBetween(minYear, maxYear);// Here you can set Range of years you need
+        int month = randBetween(0, 11);
+        int hour = randBetween(9, 22); //Hours will be displayed in between 9 to 22
+        int min = randBetween(0, 59);
+        int sec = randBetween(0, 59);
+
+        GregorianCalendar gc = new GregorianCalendar(year, month, 1);
+        int day = randBetween(1, gc.getActualMaximum(gc.DAY_OF_MONTH));
+
+        gc.set(year, month, day, hour, min, sec);
+
+        return dfDateTime.format(gc.getTime());
+    }
+
+    public String getRamdomTime() {
+        SimpleDateFormat dfDateTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault());
+        int year = randBetween(1900, 2000);// Here you can set Range of years you need
+        int month = randBetween(0, 11);
+        int hour = randBetween(9, 22); //Hours will be displayed in between 9 to 22
+        int min = randBetween(0, 59);
+        int sec = randBetween(0, 59);
+
+        GregorianCalendar gc = new GregorianCalendar(year, month, 1);
+        int day = randBetween(1, gc.getActualMaximum(gc.DAY_OF_MONTH));
+
+        gc.set(year, month, day, hour, min, sec);
+
+        return dfDateTime.format(gc.getTime());
+    }
+
+    public String getRamdomTime(boolean brazil) {
+        SimpleDateFormat dfDateTime = getFormate(brazil);
+        int year = randBetween(1900, 2000);// Here you can set Range of years you need
+        int month = randBetween(0, 11);
+        int hour = randBetween(9, 22); //Hours will be displayed in between 9 to 22
+        int min = randBetween(0, 59);
+        int sec = randBetween(0, 59);
+
+        GregorianCalendar gc = new GregorianCalendar(year, month, 1);
+        int day = randBetween(1, gc.getActualMaximum(gc.DAY_OF_MONTH));
+
+        gc.set(year, month, day, hour, min, sec);
+
+        return dfDateTime.format(gc.getTime());
+    }
+
+    public String getRamdomBirthday() {
+        SimpleDateFormat dfDateTime = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        int year = randBetween(1900, 2000);// Here you can set Range of years you need
+        int month = randBetween(0, 11);
+        int hour = randBetween(9, 22); //Hours will be displayed in between 9 to 22
+        int min = randBetween(0, 59);
+        int sec = randBetween(0, 59);
+
+        GregorianCalendar gc = new GregorianCalendar(year, month, 1);
+        int day = randBetween(1, gc.getActualMaximum(gc.DAY_OF_MONTH));
+
+        gc.set(year, month, day, hour, min, sec);
+
+        return dfDateTime.format(gc.getTime());
+    }
+
+    public String getRamdomBirthday(boolean brazil) {
+        SimpleDateFormat dfDateTime = getFormateBrifday(brazil);
+        int year = randBetween(1900, 2000);// Here you can set Range of years you need
+        int month = randBetween(0, 11);
+        int hour = randBetween(9, 22); //Hours will be displayed in between 9 to 22
+        int min = randBetween(0, 59);
+        int sec = randBetween(0, 59);
+
+        GregorianCalendar gc = new GregorianCalendar(year, month, 1);
+        int day = randBetween(1, gc.getActualMaximum(gc.DAY_OF_MONTH));
+
+        gc.set(year, month, day, hour, min, sec);
+
+        return dfDateTime.format(gc.getTime());
+    }
+
+
+    public String getRamdomHour() {
+        SimpleDateFormat dfDateTime = new SimpleDateFormat("hh:mm:ss", Locale.getDefault());
+        int year = randBetween(1900, 2000);// Here you can set Range of years you need
+        int month = randBetween(0, 11);
+        int hour = randBetween(9, 22); //Hours will be displayed in between 9 to 22
+        int min = randBetween(0, 59);
+        int sec = randBetween(0, 59);
+
+        GregorianCalendar gc = new GregorianCalendar(year, month, 1);
+        int day = randBetween(1, gc.getActualMaximum(gc.DAY_OF_MONTH));
+
+        gc.set(year, month, day, hour, min, sec);
+
+        return dfDateTime.format(gc.getTime());
+    }
+
+    private SimpleDateFormat getFormate(boolean type) {
+        SimpleDateFormat dfDateTime;
+        if (type) {
+            return dfDateTime = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss", Locale.getDefault());
+        } else {
+            return dfDateTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault());
+        }
+    }
+
+    private SimpleDateFormat getFormateBrifday(boolean type) {
+        SimpleDateFormat dfDateTime;
+        if (type) {
+            return dfDateTime = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+        } else {
+            return dfDateTime = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        }
+    }
+
+    private static int randBetween(int start, int end) {
+        return start + (int) Math.round(Math.random() * (end - start));
+    }
+
+    public static String getDateToDayUSA() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
+    public static String getDateToDayBR() {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
+    public static String getTimeStampToDay() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
+    public static String getDay() {
+        DateFormat dateFormat = new SimpleDateFormat("dd");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
+    public static String getMonth() {
+        DateFormat dateFormat = new SimpleDateFormat("MM");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
+    public static String getYear() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
+    public static String getHourToDay() {
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
+    public static String getHourToDayWithoutTheSeconds() {
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 
 
