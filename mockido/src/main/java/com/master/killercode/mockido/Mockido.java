@@ -134,7 +134,7 @@ public class Mockido {
 
     }
 
-    public static String creditCardType(String type) {
+    public static String getCreditCardType(String type) {
         int n = 9;
 
         int n1 = randomiza(n);
@@ -160,7 +160,7 @@ public class Mockido {
         return "" + type + n5 + n6 + n7 + n8 + n9 + n10 + n11 + n12 + n13 + n14 + n15 + n16;
     }
 
-    public static String creditCardTypeFormated(String type) {
+    public static String getCreditCardTypeFormated(String type) {
         int n = 9;
 
         int n1 = randomiza(n);
@@ -186,11 +186,11 @@ public class Mockido {
         return "" + type + n5 + n6 + n7 + n8 + " " + n9 + n10 + n11 + n12 + " " + n13 + n14 + n15 + n16;
     }
 
-    public static String creditCardSandBoxFormated() {
+    public static String getCreditCardSandBoxFormated() {
         return "4111 1111 1111 1111";
     }
 
-    public static String creditCardSandBox() {
+    public static String getCreditCardSandBox() {
         return "4111111111111111";
     }
 
