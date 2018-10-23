@@ -32,6 +32,7 @@ public class Mockido {
     public Mockido(Activity activity) {
         this.activity = activity;
         random = new Random();
+        creditCard();
         rg();
         cpf();
         cnpj();
@@ -40,11 +41,164 @@ public class Mockido {
 //        words = readLines("lorem.txt");
     }
 
-    //=====================================================================================================
+    //==============================================================================================
     //
-    // CPF
+    //  Credit Card
     //
-    //=====================================================================================================
+    //==============================================================================================
+
+    String[] cardsList = {
+            "8800000000000000",
+            "4026000000000000",
+            "4175000000000000",
+            "4405000000000000",
+            "4508000000000000",
+            "4844000000000000",
+            "4913000000000000",
+            "4917000000000000",
+            "5019000000000000",
+            "5018000000000000",
+            "5020000000000000",
+            "5038000000000000",
+            "5612000000000000",
+            "5893000000000000",
+            "6304000000000000",
+            "6759000000000000",
+            "6761000000000000",
+            "6762000000000000",
+            "6763000000000000",
+            "0604000000000000",
+            "6390000000000000",
+            "3528000000000000",
+            "3589000000000000",
+            "3529000000000000",
+            "6360000000000000",
+            "4916338506082832",
+            "4556015886206505",
+            "4539048040151731",
+            "4024007198964305",
+            "4716175187624512",
+            "5280934283171080",
+            "5456060454627409",
+            "5331113404316994",
+            "5259474113320034",
+            "5442179619690834",
+            "6011894492395579",
+            "6011388644154687",
+            "6011880085013612",
+            "6011652795433988",
+            "6011375973328347",
+            "345936346788903",
+            "377669501013152",
+            "373083634595479",
+            "370710819865268",
+            "371095063560404"
+    };
+
+    public static String getCreditCard() {
+        return creditCard;
+    }
+
+    public static String getCreditCardFormated() {
+        return creditCardFormated;
+    }
+
+    private static String creditCard;
+    private static String creditCardFormated;
+
+    private static void creditCard() {
+        int n = 9;
+
+        int n1 = randomiza(n);
+        int n2 = randomiza(n);
+        int n3 = randomiza(n);
+        int n4 = randomiza(n);
+        //
+        int n5 = randomiza(n);
+        int n6 = randomiza(n);
+        int n7 = randomiza(n);
+        int n8 = randomiza(n);
+        //
+        int n9 = randomiza(n);
+        int n10 = randomiza(n);
+        int n11 = randomiza(n);
+        int n12 = randomiza(n);
+        //
+        int n13 = randomiza(n);
+        int n14 = randomiza(n);
+        int n15 = randomiza(n);
+        int n16 = randomiza(n);
+
+        creditCardFormated = "" + n1 + n2 + n3 + n4 + " " + n5 + n6 + n7 + n8 + " " + n9 + n10 + n11 + n12 + " " + n13 + n14 + n15 + n16;
+        creditCard = "" + n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + n10 + n11 + n12 + n13 + n14 + n15 + n16;
+
+    }
+
+    private static String creditCardType(String type) {
+        int n = 9;
+
+        int n1 = randomiza(n);
+        int n2 = randomiza(n);
+        int n3 = randomiza(n);
+        int n4 = randomiza(n);
+        //
+        int n5 = randomiza(n);
+        int n6 = randomiza(n);
+        int n7 = randomiza(n);
+        int n8 = randomiza(n);
+        //
+        int n9 = randomiza(n);
+        int n10 = randomiza(n);
+        int n11 = randomiza(n);
+        int n12 = randomiza(n);
+        //
+        int n13 = randomiza(n);
+        int n14 = randomiza(n);
+        int n15 = randomiza(n);
+        int n16 = randomiza(n);
+
+        return "" + type + n5 + n6 + n7 + n8 + n9 + n10 + n11 + n12 + n13 + n14 + n15 + n16;
+    }
+
+    private static String creditCardTypeFormated(String type) {
+        int n = 9;
+
+        int n1 = randomiza(n);
+        int n2 = randomiza(n);
+        int n3 = randomiza(n);
+        int n4 = randomiza(n);
+        //
+        int n5 = randomiza(n);
+        int n6 = randomiza(n);
+        int n7 = randomiza(n);
+        int n8 = randomiza(n);
+        //
+        int n9 = randomiza(n);
+        int n10 = randomiza(n);
+        int n11 = randomiza(n);
+        int n12 = randomiza(n);
+        //
+        int n13 = randomiza(n);
+        int n14 = randomiza(n);
+        int n15 = randomiza(n);
+        int n16 = randomiza(n);
+
+        return "" + type + n5 + n6 + n7 + n8 + " " + n9 + n10 + n11 + n12 + " " + n13 + n14 + n15 + n16;
+    }
+
+    private static String creditCardSandBoxFormated() {
+        return "4111 1111 1111 1111";
+    }
+
+    private static String creditCardSandBox() {
+        return "4111111111111111";
+    }
+
+//=====================================================================================================
+//
+// CPF
+//
+//=====================================================================================================
 
     private static String rg;
     private static String rgFormated;
@@ -306,11 +460,11 @@ public class Mockido {
     }
 
 
-    //=====================================================================================================
-    //
-    // Names
-    //
-    //=====================================================================================================
+//=====================================================================================================
+//
+// Names
+//
+//=====================================================================================================
 
     private static String name = "";
     private static String fullName = "";
