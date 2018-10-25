@@ -2,9 +2,6 @@ package com.master.killercode.mockido;
 
 import android.app.Activity;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -95,18 +92,18 @@ public class Mockido {
             "371095063560404"
     };
 
-    public static String getCreditCard() {
+    public String getCreditCard() {
         return creditCard;
     }
 
-    public static String getCreditCardFormated() {
+    public String getCreditCardFormated() {
         return creditCardFormated;
     }
 
-    private static String creditCard;
-    private static String creditCardFormated;
+    private String creditCard;
+    private String creditCardFormated;
 
-    private static void creditCard() {
+    private void creditCard() {
         int n = 9;
 
         int n1 = randomiza(n);
@@ -134,7 +131,7 @@ public class Mockido {
 
     }
 
-    public static String getCreditCardType(String type) {
+    public String getCreditCardType(String type) {
         int n = 9;
 
         int n1 = randomiza(n);
@@ -160,7 +157,7 @@ public class Mockido {
         return "" + type + n5 + n6 + n7 + n8 + n9 + n10 + n11 + n12 + n13 + n14 + n15 + n16;
     }
 
-    public static String getCreditCardTypeFormated(String type) {
+    public String getCreditCardTypeFormated(String type) {
         int n = 9;
 
         int n1 = randomiza(n);
@@ -186,11 +183,11 @@ public class Mockido {
         return "" + type + n5 + n6 + n7 + n8 + " " + n9 + n10 + n11 + n12 + " " + n13 + n14 + n15 + n16;
     }
 
-    public static String getCreditCardSandBoxFormated() {
+    public String getCreditCardSandBoxFormated() {
         return "4111 1111 1111 1111";
     }
 
-    public static String getCreditCardSandBox() {
+    public String getCreditCardSandBox() {
         return "4111111111111111";
     }
 
@@ -200,20 +197,20 @@ public class Mockido {
 //
 //=====================================================================================================
 
-    private static String rg;
-    private static String rgFormated;
+    private String rg;
+    private String rgFormated;
 
-    private static String cpf;
-    private static String cpfFormated;
+    private String cpf;
+    private String cpfFormated;
 
-    private static String cnpj;
-    private static String cnpjFormated;
+    private String cnpj;
+    private String cnpjFormated;
 
-    private static int randomiza(int n) {
+    private int randomiza(int n) {
         return (int) (Math.random() * n);
     }
 
-    private static int mod(int dividendo) {
+    private int mod(int dividendo) {
         return (int) Math.round(dividendo - (Math.floor(dividendo / 11) * 11));
     }
 
@@ -230,7 +227,7 @@ public class Mockido {
         return doc;
     }
 
-    private static void rg() {
+    private void rg() {
         int n = 9;
         int n1 = randomiza(n);
         int n2 = randomiza(n);
@@ -261,7 +258,7 @@ public class Mockido {
 
     }
 
-    private static void cpf() {
+    private void cpf() {
         int n = 9;
         int n1 = randomiza(n);
         int n2 = randomiza(n);
@@ -292,7 +289,7 @@ public class Mockido {
 
     }
 
-    private static void cnpj() {
+    private void cnpj() {
         int n = 9;
         int n1 = randomiza(n);
         int n2 = randomiza(n);
@@ -466,13 +463,13 @@ public class Mockido {
 //
 //=====================================================================================================
 
-    private static String name = "";
-    private static String fullName = "";
-    private static String loginName = "";
+    private String name = "";
+    private String fullName = "";
+    private String loginName = "";
 
-    private static String fe_name = "";
-    private static String fe_fullName = "";
-    private static String fe_loginName = "";
+    private String fe_name = "";
+    private String fe_fullName = "";
+    private String fe_loginName = "";
 
     protected enum StringNames {
         MALE, FEMALE
@@ -929,7 +926,7 @@ public class Mockido {
 
     //==============================================================================================
     //
-    //
+    //  Dates
     //
     //==============================================================================================
 
@@ -1049,53 +1046,53 @@ public class Mockido {
         }
     }
 
-    private static int randBetween(int start, int end) {
+    private int randBetween(int start, int end) {
         return start + (int) Math.round(Math.random() * (end - start));
     }
 
-    public static String getDateToDayUSA() {
+    public String getDateToDayUSA() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date date = new Date();
         return dateFormat.format(date);
     }
 
-    public static String getDateToDayBR() {
+    public String getDateToDayBR() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         return dateFormat.format(date);
     }
 
-    public static String getTimeStampToDay() {
+    public String getTimeStampToDay() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         return dateFormat.format(date);
     }
 
-    public static String getDay() {
+    public String getDay() {
         DateFormat dateFormat = new SimpleDateFormat("dd");
         Date date = new Date();
         return dateFormat.format(date);
     }
 
-    public static String getMonth() {
+    public String getMonth() {
         DateFormat dateFormat = new SimpleDateFormat("MM");
         Date date = new Date();
         return dateFormat.format(date);
     }
 
-    public static String getYear() {
+    public String getYear() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy");
         Date date = new Date();
         return dateFormat.format(date);
     }
 
-    public static String getHourToDay() {
+    public String getHourToDay() {
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
         return dateFormat.format(date);
     }
 
-    public static String getHourToDayWithoutTheSeconds() {
+    public String getHourToDayWithoutTheSeconds() {
         DateFormat dateFormat = new SimpleDateFormat("HH:mm");
         Date date = new Date();
         return dateFormat.format(date);
