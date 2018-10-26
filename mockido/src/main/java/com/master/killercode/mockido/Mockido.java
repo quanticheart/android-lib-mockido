@@ -830,11 +830,18 @@ public class Mockido {
     //
     //==============================================================================================
 
-    private String[] URL_HOSTS_IMG = new String[]{"http://bdfjade.com/data/out/145/6478021-abstract-background.jpg",
-            "http://bdfjade.com/data/out/145/6478051-abstract-background.jpg",
-            "http://bdfjade.com/data/out/54/5613786-background-design.jpg",
-            "http://bdfjade.com/data/out/145/6478395-abstract-background.jpg",
-            "http://bdfjade.com/data/out/145/6478126-abstract-background.jpg"};
+    private String[] URL_HOSTS_IMG = new String[]{
+            "https://images.pexels.com/photos/583846/pexels-photo-583846.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "https://images.pexels.com/photos/953214/pexels-photo-953214.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "https://images.pexels.com/photos/7919/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "https://images.pexels.com/photos/908284/pexels-photo-908284.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "https://images.pexels.com/photos/988873/pexels-photo-988873.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "https://images.pexels.com/photos/1308624/pexels-photo-1308624.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+           };
 
     public String getUrlImageBackground() {
         StringBuilder sb = new StringBuilder();
